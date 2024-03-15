@@ -1,0 +1,36 @@
+# Environment parameters 
+env: dmc:Reacher-easy-v1
+frame_skip: 4
+frame_stack: 3
+
+# Training parameters 
+model: dpgvae
+random_seed: 50
+replay_buffer_size: 1_000_000
+max_ep_length: 250
+save_frequency: 100
+num_eval_episodes: 10
+batch_size: 256
+number_of_training_steps: 1_000_000
+steps_per_epoch: 10_000
+n_steps_return: 3
+primary_random_steps: 2000
+gradient_update_every: 50
+
+# Noise parameters 
+initial_noise_value: 1.0
+final_noise_value: 0.1
+noise_upto_steps: 100_000
+
+# Network parameters 
+hidden_sizes: [1024,1024,1024] # TEST 
+latent_dim: 64 # TEST 
+actor_learning_rate: 0.0001 #1e-4
+critic_learning_rate: 0.0001 #1e-4
+encoder_learning_rate: 0.0001 #1e-4
+critic_soft_update_tau: 0.01
+encoder_soft_update_tau: 0.05
+discount_rate: 0.99
+
+# Misc
+results_path: results
